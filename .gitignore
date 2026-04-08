@@ -1,0 +1,15 @@
+# Terraform state and secrets
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/terraform.tfvars
+*.tfvars
+
+# Generated team files (optional — commit these if you want GitOps)
+# terraform/team_*.tf
+
+# Python
+__pycache__/
+*.pyc
+.venv/

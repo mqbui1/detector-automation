@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------------------
+# detector-automation: team configuration
+#
+# Edit this file to define which teams exist, which cmdb_ids they own,
+# and which Splunk O11y team ID to assign detectors to.
+#
+# Run `python3 scripts/discover_cmdb_ids.py` to find cmdb_id values in your org.
+# Run `python3 scripts/generate.py` after editing to regenerate Terraform.
+# ---------------------------------------------------------------------------
+
+# Tag applied to "global template" detectors in Splunk O11y.
+# Any detector with this tag will be cloned for every team below.
+global_detector_tag: global-template
+
+# Alternatively, list global detector IDs explicitly (takes precedence over tag).
+# global_detector_ids:
+#   - AbCdEfGhIjK
+#   - LmNoPqRsTuV
+
+# Splunk Observability Cloud connection
+realm: us1   # override with SPLUNK_REALM env var
+
+teams:
+  - name: platform
+    # Splunk O11y team ID — find with: python3 scripts/discover_cmdb_ids.py --teams
+    splunk_team_id: REPLACE_WITH_TEAM_ID
+    # All cmdb_id values owned by this team
+    cmdb_ids:
+      - APP-1001
+      - APP-1002
+      - APP-1003
+
+  - name: payments
+    splunk_team_id: REPLACE_WITH_TEAM_ID
+    cmdb_ids:
+      - APP-2001
+      - APP-2002
+
+  - name: ecommerce
+    splunk_team_id: REPLACE_WITH_TEAM_ID
+    cmdb_ids:
+      - APP-3001
