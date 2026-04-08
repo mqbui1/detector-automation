@@ -1,0 +1,5 @@
+# Copy this to terraform.tfvars and fill in your values.
+# Do NOT commit terraform.tfvars — add it to .gitignore.
+
+splunk_access_token = "your-api-token-here"
+splunk_realm        = "us1"
